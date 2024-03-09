@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ClientCshaper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5b403815f6a0ab63fb4034a0f2c0ce6260a302b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef543d93c9c9cc14d758773d7a950114f19a95b2")]
 [assembly: System.Reflection.AssemblyProductAttribute("ClientCshaper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ClientCshaper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

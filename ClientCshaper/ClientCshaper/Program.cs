@@ -1,3 +1,14 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using System.Text.Json;
+using ClientCshaper.Model;
 
-Console.WriteLine("Hello, World! that it?");
+using (HttpClient client = new HttpClient())
+{
+    string resposta = await client.GetStringAsync("https://guilhermeonrails.github.io/api-csharp-songs/songs.json");
+    //Console.WriteLine(resposta);
+
+    var musiac = JsonSerializer.Deserialize<List<Music>>(resposta);
+    
+    musiac[0].ShowMusic();
+
+
+}
