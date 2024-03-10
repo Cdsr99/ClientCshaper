@@ -22,6 +22,7 @@ class Program
                 {
                     musicJson[1].ShowMusic();
                     LinqFilter.FilterAllMusicGenre(musicJson);
+                    FilterArtist.FilterAllArtist(musicJson);
 
                 }
                 else
