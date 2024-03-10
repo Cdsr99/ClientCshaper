@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text.Json;
+using ClientCshaper.Filter;
 using ClientCshaper.Model;
 
 class Program
@@ -10,18 +11,29 @@ class Program
     {
         using (HttpClient client = new HttpClient())
         {
-            string resposta = await client.GetStringAsync("https://guilhermeonrails.github.io/api-csharp-songs/songs.json");
+            try
+            {
+                string resposta =
+                    await client.GetStringAsync("https://guilhermeonrails.github.io/api-csharp-songs/songs.json");
 
-            var musicJson = JsonSerializer.Deserialize<List<Music>>(resposta);
-            
-            if (musicJson != null && musicJson.Count > 0)
-            {
-                musicJson[0].ShowMusic();
+                var musicJson = JsonSerializer.Deserialize<List<Music>>(resposta);
+
+                if (musicJson != null && musicJson.Count > 0)
+                {
+                    musicJson[1].ShowMusic();
+                    LinqFilter.FilterAllMusicGenre(musicJson);
+
+                }
+                else
+                {
+                    Console.WriteLine("No music data found.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine("No music data found.");
+                Console.WriteLine($"Error with: {ex}");
             }
+
         }
     }
 }

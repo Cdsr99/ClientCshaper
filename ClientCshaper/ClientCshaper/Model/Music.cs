@@ -14,19 +14,23 @@ namespace ClientCshaper.Model
         
         [JsonPropertyName("year")]
         public string Year { get; set; }
+        
+        [JsonPropertyName("genre")]
+        public string Genre { get; set; }
 
         // Constructor
-        public Music(string title, string artist, string year)
+        public Music(string title, string artist, string year, string genre)
         {
             Title = title;
             Artist = artist;
             Year = year;
+            Genre = genre;
         }
 
         // Method to show music details
         public void ShowMusic()
         {
-            Console.WriteLine($"Title: {Title}, Artist: {Artist}, Year: {Year}");
+            Console.WriteLine($"Title: {Title}, Artist: {Artist}, Year: {Year}, Genre: {Genre}");
         }
     }
 }
