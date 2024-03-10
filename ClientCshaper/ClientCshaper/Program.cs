@@ -24,7 +24,21 @@ class Program
                     //musicJson[1].ShowMusic();
                     //LinqFilter.FilterAllMusicGenre(musicJson);
                     //LinqFilterArtist.FilterAllArtist(musicJson);
-                    LinqFilterByGenre.FilterByGenre(musicJson, "hip hop");
+                    //LinqFilterByGenre.FilterByGenre(musicJson, "hip hop");
+                    //LinqFilterArtistMusic.FilterArtistSongs(musicJson, "Eminem");
+
+                    var Playlist = new FavoriteSongs("English 2024");
+
+                    Playlist.AddFavoriteSong(musicJson[10]);
+                    Playlist.AddFavoriteSong(musicJson[20]);
+                    Playlist.AddFavoriteSong(musicJson[25]);
+                    Playlist.AddFavoriteSong(musicJson[49]);
+                    Playlist.AddFavoriteSong(musicJson[98]);
+                    Playlist.AddFavoriteSong(musicJson[359]);
+                    
+                    Playlist.ShowFavoriteMusic();
+
+
 
                 }
                 else
