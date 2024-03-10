@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text.Json;
 using ClientCshaper.Filter;
+using ClientCshaper.LinqFilterArtist;
 using ClientCshaper.Model;
 
 class Program
@@ -20,9 +21,10 @@ class Program
 
                 if (musicJson != null && musicJson.Count > 0)
                 {
-                    musicJson[1].ShowMusic();
-                    LinqFilter.FilterAllMusicGenre(musicJson);
-                    FilterArtist.FilterAllArtist(musicJson);
+                    //musicJson[1].ShowMusic();
+                    //LinqFilter.FilterAllMusicGenre(musicJson);
+                    //LinqFilterArtist.FilterAllArtist(musicJson);
+                    LinqFilterByGenre.FilterByGenre(musicJson, "hip hop");
 
                 }
                 else
