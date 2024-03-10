@@ -1,14 +1,27 @@
-﻿using System.Text.Json;
+﻿using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Text.Json;
 using ClientCshaper.Model;
 
-using (HttpClient client = new HttpClient())
+class Program
 {
-    string resposta = await client.GetStringAsync("https://guilhermeonrails.github.io/api-csharp-songs/songs.json");
-    //Console.WriteLine(resposta);
+    static async Task Main(string[] args)
+    {
+        using (HttpClient client = new HttpClient())
+        {
+            string resposta = await client.GetStringAsync("https://guilhermeonrails.github.io/api-csharp-songs/songs.json");
 
-    var musiac = JsonSerializer.Deserialize<List<Music>>(resposta);
-    
-    musiac[0].ShowMusic();
-
-
+            var musicJson = JsonSerializer.Deserialize<List<Music>>(resposta);
+            
+            if (musicJson != null && musicJson.Count > 0)
+            {
+                musicJson[0].ShowMusic();
+            }
+            else
+            {
+                Console.WriteLine("No music data found.");
+            }
+        }
+    }
 }

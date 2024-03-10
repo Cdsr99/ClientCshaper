@@ -1,26 +1,32 @@
 using System.Text.Json.Serialization;
 
-namespace ClientCshaper.Model;
-
-internal class Music
+namespace ClientCshaper.Model
 {
-    [JsonPropertyName("song")]
-    public string? name { get; set; }
-    
-    [JsonPropertyName("artist")]
-    public string? singer { get; set; }
-
-    [JsonPropertyName("duration_ms")]
-    public string? time { get; set; }
-
-    [JsonPropertyName("genre")]
-    public string? type { get; set; }
-
-    public void ShowMusic()
+    public class Music
     {
-        Console.WriteLine($"Name: {name}");
-        Console.WriteLine($"singer: {singer}");
-        //Console.WriteLine($"time: {time}");
-        Console.WriteLine($"type: {type}");
+        // Define properties of Music class
+        [JsonPropertyName("song")]
+
+        public string Title { get; set; }
+        
+        [JsonPropertyName("artist")]
+        public string Artist { get; set; }
+        
+        [JsonPropertyName("year")]
+        public string Year { get; set; }
+
+        // Constructor
+        public Music(string title, string artist, string year)
+        {
+            Title = title;
+            Artist = artist;
+            Year = year;
+        }
+
+        // Method to show music details
+        public void ShowMusic()
+        {
+            Console.WriteLine($"Title: {Title}, Artist: {Artist}, Year: {Year}");
+        }
     }
 }
