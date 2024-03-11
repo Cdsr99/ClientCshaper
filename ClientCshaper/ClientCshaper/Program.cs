@@ -27,16 +27,17 @@ class Program
                     //LinqFilterByGenre.FilterByGenre(musicJson, "hip hop");
                     //LinqFilterArtistMusic.FilterArtistSongs(musicJson, "Eminem");
 
-                    var Playlist = new FavoriteSongs("English 2024");
+                    var Playlist = new FavoriteSongs("English2024");
 
                     Playlist.AddFavoriteSong(musicJson[10]);
                     Playlist.AddFavoriteSong(musicJson[20]);
                     Playlist.AddFavoriteSong(musicJson[25]);
                     Playlist.AddFavoriteSong(musicJson[49]);
                     Playlist.AddFavoriteSong(musicJson[98]);
-                    Playlist.AddFavoriteSong(musicJson[359]);
                     
                     Playlist.ShowFavoriteMusic();
+
+                    Playlist.CreateJsonFile();  
 
 
 

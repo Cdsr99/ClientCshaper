@@ -1,3 +1,5 @@
+using System.Text.Json;
+
 namespace ClientCshaper.Model;
 
 internal class FavoriteSongs
@@ -23,5 +25,18 @@ internal class FavoriteSongs
         {
             Console.WriteLine($"{song.Title} from {song.Artist}");
         }
+    }
+
+    public void CreateJsonFile()
+    {
+        string fileName = $"my-favorite-playlist-{PlaylistName}.json";
+        string content = JsonSerializer.Serialize(new
+        {
+            PlaylistName = PlaylistName,
+            songs = ListOfFavoriteSongs
+        });
+        File.WriteAllText(fileName, content);
+        
+        Console.WriteLine("the file has been created.");
     }
 }
